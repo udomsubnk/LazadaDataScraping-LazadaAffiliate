@@ -1,0 +1,27 @@
+.container > div{
+}
+*{
+	align-content: center;
+}
+.item{
+	width: 80%;
+	max-width: 800px;
+	margin: auto;
+	border: 1px solid black;
+	margin-top: 10px;
+	padding-bottom: 10px;
+}
+.hide{
+	display: none;
+}
+textarea{
+	width: 30%;
+	height: 100px;
+	display: inline-block;
+}
+.gen{
+	background-color: orange;
+}
+.done{
+	background-color: red;
+}

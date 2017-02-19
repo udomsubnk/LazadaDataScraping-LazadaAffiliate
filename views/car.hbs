@@ -1,0 +1,64 @@
+<div class="contrainer"><center>
+	{{#each data}}
+		<div class="item" id="item{{@index}}">
+			<div class="img">
+				<center><img src="{{this.images.[0]}}" width="150px"></center>
+			</div>
+			<div class="name" id="name{{@index}}">
+				{{this.title}}
+			</div>
+			<center><input type="text" id="title{{@index}}" value="{{this.title}}" style="width: 90%;"></center>
+			<br>
+
+			<input type="text" id="url{{@index}}" class="" value="{{this.url}}">
+			<input type="text" id="affURL{{@index}}" placeholder="affURL">
+			<select id="type{{@index}}">
+				<option value="-">-</option>
+				<option value="pickup">รถกระบะ</option>
+				<option value="sport">รถสปอร์ต</option>
+				<option value="advanture">รถตะลุย</option>
+			</select>
+			<select id="color{{@index}}">
+				<option value="-">-</option>
+				<option value="red">red</option>
+				<option value="yellow">yellow</option>
+				<option value="blue">blue</option>
+				<option value="green">green</option>
+				<option value="white">white</option>
+				<option value="black">black</option>
+				<option value="orange">orange</option>
+				<option value="brown">brown</option>
+				<option value="purple">purple</option>
+			</select>
+			<button onclick="gen('{{@index}}')" class="gen" style="float:right">Gen and Copy</button>
+			<br><br>
+			<input type="text" id="price{{@index}}" class="hide" value="{{this.price}}">
+			<input type="text" id="oldprice{{@index}}" class="hide" value="{{this.oldprice}}">
+			<input type="text" id="discount{{@index}}" class="hide" value="{{this.discount}}">
+			<input type="text" id="rating{{@index}}" class="hide" value="{{this.rating}}">
+			<input type="text" id="detail{{@index}}" class="hide" value="{{this.detail}}">
+			<input type="text" id="warranty{{@index}}" class="hide" value="{{this.warranty}}">
+			<input type="text" id="images{{@index}}" class="hide" value="{{this.images}}">
+			<input type="text" id="comments{{@index}}" class="hide" value="comments = { {{#each this.comments}}['title':'{{this.title}}','date':'{{this.date}}','nickname':'{{this.nickname}}','detail':'{{this.detail}}','rating':'{{this.rating}}'],{{/each}} } ">
+			<input type="text" id="contents{{@index}}" class="hide" value="{{this.contents}}">
+
+			
+
+			<textarea id="script{{@index}}"></textarea>
+			<textarea id="searchimg{{@index}}"></textarea>
+			<textarea id="script3{{@index}}"></textarea>
+			<br>
+			<button class="done" onclick="done('car',{{@index}})">done</button>
+			<button class="undone" onclick="undone('car',{{@index}})">undone</button>
+		</div>
+	{{/each}}
+	</center>
+</div>
+<style>
+	{{#each donecar}}
+		#item{{this.index}}{
+			background-color: red;
+			display: none !important;
+		}
+	{{/each}}
+</style>
